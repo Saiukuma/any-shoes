@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANY SHOES • Official Links</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                    }
+                }
+            }
+        };
+
+        (function() {
+            const savedTheme = localStorage.getItem('any_shoes_theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <!-- Google Fonts: Cinzel, Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- QRCode.js for instant QR Code generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+<body class="min-h-screen bg-[#FAFAFA] dark:bg-[#0D0D0D] text-[#111111] dark:text-[#F5F5F5] transition-colors duration-300 antialiased selection:bg-[#111111] selection:text-white dark:selection:bg-[#F5F5F5] dark:selection:text-[#0D0D0D]" id="app-body">
+
+    <!-- Top Floating Action Bar -->
+    <header id="top-bar" class="sticky top-0 z-40 w-full backdrop-blur-md border-b bg-[#FAFAFA]/90 dark:bg-[#0D0D0D]/90 border-neutral-200 dark:border-[#2A2A2A] transition-colors duration-300">
+        <div class="max-w-lg mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Left Light / Dark Mode Toggle Pill -->
+            <button onclick="toggleTheme()" id="theme-toggle-btn" aria-label="Toggle color theme"
+                    class="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border bg-white dark:bg-[#141414] text-[#111111] dark:text-[#F5F5F5] border-neutral-300 dark:border-[#2A2A2A] hover:border-[#111111] dark:hover:border-[#F5F5F5] transition active:scale-95">
+                <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden"></i>
+                <i data-lucide="sun" class="w-3.5 h-3.5 hidden dark:block"></i>
+                <span class="block dark:hidden">Noir</span>
+                <span class="hidden dark:block">Light</span>
+            </button>
+
+            <!-- Share / QR Button -->
+            <button onclick="openShareModal()" id="share-btn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase border bg-white dark:bg-[#141414] text-[#111111] dark:text-[#F5F5F5] border-neutral-300 dark:border-[#2A2A2A] hover:border-[#111111] dark:hover:border-[#F5F5F5] transition active:scale-95">
+                <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
+                <span>Share / QR</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-lg mx-auto px-5 pt-9 pb-20">
+        
+        <!-- Editorial Profile Header Section -->
+        <section class="text-center flex flex-col items-center mb-10">
+            <!-- Brand Logo Lockup -->
+            <div class="w-full max-w-[230px] sm:max-w-[250px] mx-auto mb-2 flex flex-col items-center">
+                <img id="brand-logo"
+                     src="logo.png"
+                     alt="ANY SHOES Stiletto Logo"
+                     onerror="handleLogoError(this)"
+                     class="logo-adaptive w-full h-auto object-contain transition-all duration-500 hover:scale-[1.02]">
+                
+                <!-- Crisp Custom SVG Stiletto Fallback (Shown automatically if logo.png isn't in the same folder yet) -->
+                <div id="svg-logo-fallback" class="hidden flex-col items-center w-full py-2">
+                    <svg class="w-36 h-28 mb-2 text-[#111111] dark:text-[#F5F5F5] transition-colors" viewBox="0 0 220 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Minimalist High-Fashion Stiletto Silhouette -->
+                        <path d="M58 24C58 24 44 45 45 64C45 64 53 75 53 96L53 148H58L60 84C60 84 68 83 78 96C89 111 96 136 105 145C113 152 128 152 152 149C174 146 192 141 193 139C194 137 177 128 161 124C146 121 134 126 123 116C112 106 103 82 91 65C79 48 58 24 58 24Z" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Heel & Arch Accent Fill -->
+                        <path d="M46 65C49 71 53 82 53 96L53 148H57.5L59.5 83.5C55 77 50 70 46 65Z" fill="currentColor"/>
+                        <path d="M58 25C52 35 45 48 45 63C47 52 53 38 59 27L58 25Z" fill="currentColor"/>
+                        <path d="M123 116C133 125 145 123 158 124C148 131 133 132 122 123C113 115 104 94 94 74C104 90 113 107 123 116Z" fill="currentColor"/>
+                        <rect x="52" y="148" width="7" height="2.2" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Wide-Tracked Editorial Brand Title -->
+            <h1 id="brand-name" class="font-display text-2xl sm:text-[28px] font-medium tracking-[0.28em] uppercase pl-[0.28em] text-[#111111] dark:text-[#F5F5F5] mb-3 transition-colors">
+                ANY SHOES
+            </h1>
+
+            <!-- Signature Hairline + Four-Point Sparkle Ornament -->
+            <div class="flex items-center justify-center gap-3.5 w-full max-w-[230px] mb-4 text-[#111111] dark:text-[#F5F5F5] transition-colors" aria-hidden="true">
+                <span class="h-[1px] flex-1 bg-[#111111] dark:bg-[#F5F5F5]/70"></span>
+                <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0.5L14.6 9.4L23.5 12L14.6 14.6L12 23.5L9.4 14.6L0.5 12L9.4 9.4L12 0.5Z"/>
+                </svg>
+                <span class="h-[1px] flex-1 bg-[#111111] dark:bg-[#F5F5F5]/70"></span>
+            </div>
+
+            <!-- Boutique Subtitle -->
+            <p id="brand-tagline" class="font-sans text-[11px] sm:text-xs font-medium tracking-[0.24em] uppercase text-[#71717A] dark:text-neutral-400 max-w-xs sm:max-w-sm leading-relaxed">
+                CURATED FOOTWEAR • PHNOM PENH
+            </p>
+        </section>
+
+        <!-- Primary Social & Boutique Action Links -->
+        <section class="space-y-3 mb-7" id="links-container">
+            <!-- Rendered statically from locked production config -->
+        </section>
+
+        <!-- Prominent Interactive Google Maps Store Locator Card -->
+        <section class="mb-14" aria-label="Boutique Store Location">
+            <div class="rounded-2xl overflow-hidden border border-[#111111] dark:border-[#2A2A2A] bg-white dark:bg-[#141414] shadow-sm transition-colors duration-300">
+                <!-- Card Top Header -->
+                <div class="px-4 py-3.5 flex items-center justify-between border-b border-neutral-200 dark:border-[#2A2A2A]">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <div class="w-9 h-9 rounded-lg border border-neutral-200 dark:border-[#2A2A2A] bg-neutral-50 dark:bg-[#0D0D0D] flex items-center justify-center shrink-0 text-[#111111] dark:text-[#F5F5F5]">
+                            <i data-lucide="map-pin" class="w-4 h-4 stroke-[1.75]"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <h2 class="font-medium text-sm tracking-wide text-[#111111] dark:text-[#F5F5F5]">Visit Boutique</h2>
+                                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wider bg-neutral-100 dark:bg-[#222222] text-neutral-700 dark:text-neutral-300">
+                                    Open Daily
+                                </span>
+                            </div>
+                            <p class="text-xs text-[#71717A] dark:text-neutral-400 truncate mt-0.5">
+                                Phnom Penh, Cambodia • Tel: 092 210 111
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/trPXmnhstWkbZ9Nm8" target="_blank" rel="noopener noreferrer"
+                       class="px-3 py-1.5 rounded-lg border border-neutral-300 dark:border-[#2A2A2A] hover:border-[#111111] dark:hover:border-[#F5F5F5] text-[11px] font-semibold uppercase tracking-wider text-[#111111] dark:text-[#F5F5F5] shrink-0 transition">
+                        Directions
+                    </a>
+                </div>
+
+                <!-- Large Live Interactive Map Preview -->
+                <div class="relative w-full h-64 sm:h-72 bg-neutral-100 dark:bg-[#0D0D0D] overflow-hidden group">
+                    <iframe
+                        title="ANY SHOES Phnom Penh Store Map"
+                        src="https://maps.google.com/maps?q=Phnom%20Penh,%20Cambodia&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        class="w-full h-full border-0 boutique-map-frame transition-all duration-500"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                    <!-- Subtle Floating Pin Pill -->
+                    <a href="https://maps.app.goo.gl/trPXmnhstWkbZ9Nm8" target="_blank" rel="noopener noreferrer"
+                       class="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 dark:bg-[#141414]/95 backdrop-blur-md border border-neutral-300 dark:border-[#2A2A2A] text-[11px] font-medium text-[#111111] dark:text-[#F5F5F5] shadow-md hover:scale-[1.02] transition">
+                        <span class="w-2 h-2 rounded-full bg-[#111111] dark:bg-[#F5F5F5] animate-pulse"></span>
+                        <span>ANY SHOES • Phnom Penh</span>
+                    </a>
+                </div>
+
+                <!-- Prominent Full-Width Google Maps Action Footer -->
+                <a href="https://maps.app.goo.gl/trPXmnhstWkbZ9Nm8" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-between px-4 py-3.5 bg-[#111111] dark:bg-[#F5F5F5] text-white dark:text-[#0D0D0D] hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors group">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="navigation" class="w-4 h-4 stroke-[2]"></i>
+                        <span class="text-xs font-semibold uppercase tracking-[0.16em]">Open Exact Pin in Google Maps</span>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[2] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Minimalist Editorial Footer -->
+        <footer class="text-center pt-6 border-t border-neutral-200 dark:border-[#2A2A2A] transition-colors">
+            <div class="flex items-center justify-center gap-3 w-36 mx-auto mb-3 text-[#111111] dark:text-[#F5F5F5]">
+                <span class="h-[1px] flex-1 bg-[#111111]/40 dark:bg-[#F5F5F5]/40"></span>
+                <svg class="w-2.5 h-2.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0.5L14.6 9.4L23.5 12L14.6 14.6L12 23.5L9.4 14.6L0.5 12L9.4 9.4L12 0.5Z"/>
+                </svg>
+                <span class="h-[1px] flex-1 bg-[#111111]/40 dark:bg-[#F5F5F5]/40"></span>
+            </div>
+            <p class="text-[11px] tracking-[0.22em] uppercase text-[#111111] dark:text-[#F5F5F5] font-medium mb-1">
+                ANY SHOES • PHNOM PENH
+            </p>
+            <p class="text-[10px] tracking-[0.14em] uppercase text-[#71717A] dark:text-neutral-500">
+                © <span id="year"></span> ALL RIGHTS RESERVED
+            </p>
+        </footer>
+    </main>
+
+    <!-- Monochrome Editorial QR Code Share Modal -->
+    <div id="share-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity">
+        <div class="bg-[#FAFAFA] dark:bg-[#141414] text-[#111111] dark:text-[#F5F5F5] w-full max-w-sm rounded-2xl p-6 shadow-2xl border border-neutral-300 dark:border-[#2A2A2A] relative transform transition-all">
+            <button onclick="closeShareModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-200/70 dark:hover:bg-neutral-800 text-[#111111] dark:text-[#F5F5F5] transition">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+
+            <div class="text-center pt-1">
+                <h3 class="font-display text-lg font-medium tracking-[0.22em] uppercase text-[#111111] dark:text-[#F5F5F5] pl-[0.22em] mb-2">ANY SHOES</h3>
+                
+                <!-- Four-Point Star Divider -->
+                <div class="flex items-center justify-center gap-3 w-40 mx-auto mb-3 opacity-75">
+                    <span class="h-[1px] flex-1 bg-[#111111]/30 dark:bg-[#F5F5F5]/30"></span>
+                    <svg class="w-3 h-3 text-[#111111] dark:text-[#F5F5F5]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0.5L14.6 9.4L23.5 12L14.6 14.6L12 23.5L9.4 14.6L0.5 12L9.4 9.4L12 0.5Z"/>
+                    </svg>
+                    <span class="h-[1px] flex-1 bg-[#111111]/30 dark:bg-[#F5F5F5]/30"></span>
+                </div>
+
+                <p class="font-serif italic text-sm text-neutral-600 dark:text-neutral-400 mb-5">Scan in-boutique or share our direct link</p>
+
+                <!-- QR Code Box (Always white background so QR scanners read reliably) -->
+                <div class="bg-white p-4 rounded-xl border border-neutral-200 inline-flex flex-col items-center justify-center mb-4 shadow-sm">
+                    <div id="qrcode"></div>
+                </div>
+
+                <div class="mb-4">
+                    <button onclick="downloadQRCode()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-neutral-300 dark:border-[#2A2A2A] hover:border-[#111111] dark:hover:border-[#F5F5F5] text-[11px] font-semibold uppercase tracking-wider text-[#111111] dark:text-[#F5F5F5] transition active:scale-95">
+                        <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                        Save QR PNG
+                    </button>
+                </div>
+
+                <!-- Copy Link Box -->
+                <div class="flex items-center gap-2 bg-white dark:bg-[#0D0D0D] p-1.5 rounded-xl border border-neutral-300 dark:border-[#2A2A2A]">
+                    <input type="text" id="share-url-input" readonly class="bg-transparent text-xs text-neutral-600 dark:text-neutral-300 px-2.5 w-full focus:outline-none font-medium">
+                    <button onclick="copyPageLink()" class="px-4 py-2 rounded-lg bg-[#111111] dark:bg-[#F5F5F5] hover:bg-neutral-800 dark:hover:bg-neutral-200 text-white dark:text-[#0D0D0D] text-[11px] font-semibold uppercase tracking-wider shrink-0 transition active:scale-95">
+                        Copy Page Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300">
+        <div class="bg-[#111111] dark:bg-[#F5F5F5] text-white dark:text-[#0D0D0D] px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 text-xs font-medium tracking-wide border border-neutral-700 dark:border-neutral-300">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0.5L14.6 9.4L23.5 12L14.6 14.6L12 23.5L9.4 14.6L0.5 12L9.4 9.4L12 0.5Z"/></svg>
+            <span id="toast-message">Copied to clipboard</span>
+        </div>
+    </div>
+
+    <!-- Hidden textarea for safe clipboard fallback -->
+    <textarea id="clipboard-helper" class="fixed -top-96 left-0 opacity-0"></textarea>
+
+    <style>
+        /* Seamless Logo Blending in Light Mode & Crisp White Inversion in Noir Dark Mode */
+        .logo-adaptive {
+            mix-blend-mode: multiply;
+        }
+        html.dark .logo-adaptive {
+            filter: invert(1) contrast(1.08);
+            mix-blend-mode: screen;
+        }
+
+        /* Editorial Monochrome Map Styling (Light & Dark Modes) */
+        .boutique-map-frame {
+            filter: grayscale(100%) contrast(1.04);
+        }
+        html.dark .boutique-map-frame {
+            filter: invert(92%) hue-rotate(180deg) grayscale(85%) contrast(1.06);
+        }
+
+        /* Editorial Link Card High-Contrast Hover Inversion (Light Mode) */
+        .editorial-link-card {
+            transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.25s ease,
+                        transform 0.2s ease,
+                        box-shadow 0.25s ease;
+        }
+        html:not(.dark) .editorial-link-card:hover {
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
+        }
+        html:not(.dark) .editorial-link-card:hover .link-subtitle {
+            color: rgba(255, 255, 255, 0.72) !important;
+        }
+        html:not(.dark) .editorial-link-card:hover .link-icon-wrap {
+            background-color: rgba(255, 255, 255, 0.14) !important;
+            color: #FFFFFF !important;
+            border-color: transparent !important;
+        }
+        html:not(.dark) .editorial-link-card:hover .inline-copy-btn {
+            border-color: rgba(255, 255, 255, 0.35) !important;
+            color: #FFFFFF !important;
+        }
+        html:not(.dark) .editorial-link-card:hover .inline-copy-btn:hover {
+            background-color: #FFFFFF !important;
+            color: #111111 !important;
+        }
+
+        /* Editorial Link Card High-Contrast Hover Inversion (Noir Dark Mode) */
+        html.dark .editorial-link-card:hover {
+            background-color: #F5F5F5 !important;
+            color: #0D0D0D !important;
+            border-color: #F5F5F5 !important;
+            transform: translateY(-2px);
+        }
+        html.dark .editorial-link-card:hover .link-subtitle {
+            color: rgba(13, 13, 13, 0.72) !important;
+        }
+        html.dark .editorial-link-card:hover .link-icon-wrap {
+            background-color: rgba(13, 13, 13, 0.1) !important;
+            color: #0D0D0D !important;
+            border-color: transparent !important;
+        }
+        html.dark .editorial-link-card:hover .inline-copy-btn {
+            border-color: rgba(13, 13, 13, 0.35) !important;
+            color: #0D0D0D !important;
+        }
+        html.dark .editorial-link-card:hover .inline-copy-btn:hover {
+            background-color: #0D0D0D !important;
+            color: #F5F5F5 !important;
+        }
+    </style>
+
+    <script>
+        // ==========================================
+        // 1. LOCKED PRODUCTION BOUTIQUE LINKS
+        // ==========================================
+        const BOUTIQUE_LINKS = [
+            {
+                title: 'Order via Telegram',
+                subtitle: '@SRENGDANY • Direct Message & Inquiries',
+                url: 'https://t.me/SRENGDANY',
+                icon: 'send',
+                highlight: true
+            },
+            {
+                title: 'Call Store',
+                subtitle: '092 210 111',
+                url: 'tel:+85592210111',
+                copyValue: '092210111',
+                icon: 'phone',
+                highlight: false
+            },
+            {
+                title: 'Instagram',
+                subtitle: '@anyshoesxd',
+                url: 'https://www.instagram.com/anyshoesxd?knvt=MXNvdnE0N202M21mMg%3D%3D&utm_source=qr',
+                icon: 'instagram',
+                highlight: false
+            },
+            {
+                title: 'Facebook Page',
+                subtitle: 'Official Page & Updates',
+                url: 'https://www.facebook.com/share/1KcsNpVpJq/?mibextid=wwXIfr',
+                icon: 'facebook',
+                highlight: false
+            },
+            {
+                title: 'TikTok',
+                subtitle: '@any.shoes7',
+                url: 'https://www.tiktok.com/@any.shoes7?_r=1&_t=ZS-9BclmGL6J4T',
+                icon: 'tiktok',
+                highlight: false
+            }
+        ];
+
+        // ==========================================
+        // 2. THEME TOGGLE, LOGO FALLBACK & RENDERING
+        // ==========================================
+        function toggleTheme() {
+            const root = document.documentElement;
+            const isDark = root.classList.toggle('dark');
+            localStorage.setItem('any_shoes_theme', isDark ? 'dark' : 'light');
+            showToast(isDark ? 'Noir dark mode enabled' : 'Alabaster light mode enabled');
+        }
+
+        function handleLogoError(imgEl) {
+            imgEl.classList.add('hidden');
+            const fallback = document.getElementById('svg-logo-fallback');
+            if (fallback) {
+                fallback.classList.remove('hidden');
+                fallback.classList.add('flex');
+            }
+        }
+
+        function renderLinkIcon(icon) {
+            const className = 'w-4 h-4 shrink-0';
+            const brandIcons = {
+                instagram: `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"></circle></svg>`,
+                facebook: `<svg class="${className}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8.2h2.76l.41-3.2H13.5V7.56c0-.93.26-1.56 1.6-1.56h1.7V3.14C16.5 3.05 15.46 3 14.25 3 11.72 3 10 4.54 10 7.37V9.6H7.15v3.2H10V21h3.5Z"></path></svg>`,
+                tiktok: `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.4 3.2v11.1a4.2 4.2 0 1 1-3.7-4.17" stroke="#25F4EE" stroke-width="3.2"></path><path d="M15.5 3.2v11.1a4.2 4.2 0 1 1-3.7-4.17" stroke="#FE2C55" stroke-width="3.2"></path><path d="M15 3.2v11.1a4.2 4.2 0 1 1-3.7-4.17M15 3.2c.55 3 2.25 4.75 5.2 5.1" stroke="currentColor" stroke-width="1.8"></path></svg>`
+            };
+            return brandIcons[icon] || `<i data-lucide="${escapeHtml(icon)}" class="${className} stroke-[1.75]"></i>`;
+        }
+
+        function renderLinks() {
+            const container = document.getElementById('links-container');
+
+            container.innerHTML = BOUTIQUE_LINKS.map(link => {
+                const isHighlight = link.highlight;
+                const cardClasses = isHighlight
+                    ? 'bg-[#111111] dark:bg-[#F5F5F5] text-white dark:text-[#0D0D0D] border-[#111111] dark:border-[#F5F5F5]'
+                    : 'bg-white dark:bg-[#141414] text-[#111111] dark:text-[#F5F5F5] border-[#111111] dark:border-[#2A2A2A]';
+
+                const iconWrapClasses = isHighlight
+                    ? 'bg-white/15 dark:bg-black/10 text-white dark:text-[#0D0D0D] border-transparent'
+                    : 'bg-transparent text-[#111111] dark:text-[#F5F5F5] border-neutral-200 dark:border-[#2A2A2A]';
+
+                const subtitleClasses = isHighlight
+                    ? 'text-white/75 dark:text-black/70'
+                    : 'text-[#71717A] dark:text-neutral-400';
+
+                const sparkleHtml = isHighlight
+                    ? `<svg class="w-3 h-3 shrink-0 opacity-90" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0.5L14.6 9.4L23.5 12L14.6 14.6L12 23.5L9.4 14.6L0.5 12L9.4 9.4L12 0.5Z"/></svg>`
+                    : '';
+
+                const isTel = link.url.startsWith('tel:');
+                const targetAttr = isTel ? '' : 'target="_blank" rel="noopener noreferrer"';
+                const copyBtnHtml = link.copyValue
+                    ? `<button type="button" onclick="handleInlineCopy(event, this, '${escapeHtml(link.copyValue)}')" class="inline-copy-btn px-2.5 py-1 rounded-lg border border-neutral-300 dark:border-[#2A2A2A] text-[10px] font-semibold uppercase tracking-wider text-[#111111] dark:text-[#F5F5F5] transition shrink-0">Copy</button>`
+                    : '';
+
+                return `
+                    <a href="${escapeHtml(link.url)}" ${targetAttr}
+                       class="editorial-link-card ${cardClasses} group flex items-center justify-between px-4 py-3.5 rounded-xl border active:scale-[0.99]">
+                        <div class="flex items-center gap-3.5 min-w-0">
+                            <div class="link-icon-wrap ${iconWrapClasses} w-10 h-10 rounded-lg border flex items-center justify-center shrink-0 transition-colors">
+                                ${renderLinkIcon(link.icon)}
+                            </div>
+                            <div class="min-w-0 text-left">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-medium text-sm tracking-wide truncate">${escapeHtml(link.title)}</span>
+                                    ${sparkleHtml}
+                                </div>
+                                ${link.subtitle ? `<div class="link-subtitle ${subtitleClasses} text-xs truncate mt-0.5 font-normal transition-colors">${escapeHtml(link.subtitle)}</div>` : ''}
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pl-2 shrink-0">
+                            ${copyBtnHtml}
+                            <div class="opacity-55 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 stroke-[1.75]"></i>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        function handleInlineCopy(event, btnEl, value) {
+            event.preventDefault();
+            event.stopPropagation();
+            copyTextSafe(value, `Copied ${value}`);
+            const originalText = btnEl.textContent;
+            btnEl.textContent = 'Copied';
+            clearTimeout(btnEl._copyTimer);
+            btnEl._copyTimer = setTimeout(() => {
+                btnEl.textContent = originalText;
+            }, 1800);
+        }
+
+        // ==========================================
+        // 3. SHARE / QR MODAL & CLIPBOARD
+        // ==========================================
+        function openShareModal() {
+            const modal = document.getElementById('share-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            const currentUrl = window.location.href;
+            document.getElementById('share-url-input').value = currentUrl;
+
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+            try {
+                new QRCode(qrContainer, {
+                    text: currentUrl,
+                    width: 156,
+                    height: 156,
+                    colorDark: '#111111',
+                    colorLight: '#FFFFFF',
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            } catch (e) {
+                qrContainer.innerHTML = '<p class="text-xs text-neutral-500 p-4">QR Ready when hosted online</p>';
+            }
+        }
+
+        function closeShareModal() {
+            const modal = document.getElementById('share-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function copyTextSafe(text, successMsg) {
+            const helper = document.getElementById('clipboard-helper');
+            helper.value = text;
+            helper.select();
+            helper.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showToast(successMsg);
+            } catch (err) {
+                showToast('Unable to copy automatically');
+            }
+        }
+
+        function copyPageLink() {
+            copyTextSafe(window.location.href, 'ANY SHOES link copied');
+        }
+
+        function downloadQRCode() {
+            const qrCanvas = document.querySelector('#qrcode canvas');
+            const qrImg = document.querySelector('#qrcode img');
+            let dataUrl = '';
+            if (qrCanvas) {
+                dataUrl = qrCanvas.toDataURL('image/png');
+            } else if (qrImg && qrImg.src) {
+                dataUrl = qrImg.src;
+            }
+            if (!dataUrl) {
+                showToast('QR code still generating');
+                return;
+            }
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = 'ANY-SHOES-QR.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('QR Code PNG downloaded');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('opacity-0', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            clearTimeout(window._toastTimer);
+            window._toastTimer = setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-4');
+                toast.classList.remove('opacity-100', 'translate-y-0');
+            }, 2400);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Close modal when clicking backdrop
+        document.getElementById('share-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeShareModal();
+        });
+
+        // Initialize on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            renderLinks();
+        });
+    </script>
+</body>
+</html>
